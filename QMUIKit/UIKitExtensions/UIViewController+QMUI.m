@@ -53,6 +53,7 @@ QMUISynthesizeIdCopyProperty(qmui_prefersHomeIndicatorAutoHiddenBlock, setQmui_p
                 navigationBarAppearance.backgroundColor = QMUICMI.navBarBarTintColor;
                 navigationBarAppearance.shadowImage = QMUICMI.navBarShadowImage;
                 selfObject.navigationController.navigationBar.scrollEdgeAppearance = navigationBarAppearance;
+                selfObject.navigationController.navigationBar.standardAppearance = navigationBarAppearance;
             }
             
         });
