@@ -47,6 +47,14 @@ QMUISynthesizeIdCopyProperty(qmui_prefersHomeIndicatorAutoHiddenBlock, setQmui_p
         
         ExtendImplementationOfVoidMethodWithoutArguments([UIViewController class], @selector(viewDidLoad), ^(UIViewController *selfObject) {
             selfObject.qmui_visibleState = QMUIViewControllerViewDidLoad;
+            
+            if (@available(iOS 13.0, *)) {
+                UINavigationBarAppearance * navigationBarAppearance = [UINavigationBarAppearance new];
+                navigationBarAppearance.backgroundColor = QMUICMI.navBarBarTintColor;
+                navigationBarAppearance.shadowImage = QMUICMI.navBarShadowImage;
+                selfObject.navigationController.navigationBar.scrollEdgeAppearance = navigationBarAppearance;
+            }
+            
         });
         
         ExtendImplementationOfVoidMethodWithSingleArgument([UIViewController class], @selector(viewWillAppear:), BOOL, ^(UIViewController *selfObject, BOOL animated) {

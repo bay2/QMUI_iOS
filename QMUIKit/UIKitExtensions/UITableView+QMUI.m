@@ -263,6 +263,10 @@ const NSUInteger kFloatValuePrecision = 4;// 统一一个小数点运算精度
     
     self.qmui_insetGroupedCornerRadius = TableViewInsetGroupedCornerRadius;
     self.qmui_insetGroupedHorizontalInset = TableViewInsetGroupedHorizontalInset;
+    
+    if (@available(iOS 15.0, *)) {
+        self.sectionHeaderTopPadding = 0;
+    }
 }
 
 - (void)_qmui_configEstimatedRowHeight {
